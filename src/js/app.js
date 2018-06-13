@@ -1,3 +1,5 @@
+// http://truffleframework.com/tutorials/pet-shop
+
 App = {
   web3Provider: null,
   contracts: {},
@@ -26,7 +28,7 @@ App = {
     if (typeof web3 !== 'undefined') {
       App.web3Provider = web3.currentProvider;
     } else {
-      // If no injected web3 instance is detected, fall back to Ganache
+      // If no injected web3 instance is detected, fall back to Ganache : NOT IN PROD !
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
     web3 = new Web3(App.web3Provider);
